@@ -54,7 +54,7 @@ def adaptive_AIC(y, t, kr_bar, tau_e, M, C, H, m_foot, l_foot_com, mov, alpha, t
 
 
 # specify the number of movements
-n_movements = 80
+n_movements = 2
 
 for movement in range(n_movements):
     E = 0
@@ -62,12 +62,14 @@ for movement in range(n_movements):
     if movement % 2 == 0:
         # going up
         mov = 1
-        tau_e = -1*tau_e
+        tau_e1 = -1*tau_e
+        theta_adm1 = theta_adm
     else:
         # going down
         mov =2
-        theta_adm = -theta_adm
-    sol = odeint(adaptive_AIC, [theta_list[-1], theta_dot_list[-1]], t, args=(kr_bar, tau_e, M, C, H, m_foot, l_foot_com, mov, alpha_list[-1], theta_adm))
+        theta_adm1 = -theta_adm
+        tau_e1 = tau_e
+    sol = odeint(adaptive_AIC, [theta_list[-1], theta_dot_list[-1]], t, args=(kr_bar, tau_e1, M, C, H, m_foot, l_foot_com, mov, alpha_list[-1], theta_adm1))
     # print(sol)
     theta_list += list(sol[:,0])
     theta_dot_list += list(sol[:,1])
@@ -110,10 +112,10 @@ for movement in range(n_movements):
 
 
 
-# plt.plot(theta_d)
-# plt.plot(theta_list)
-print(len(kr_list))
-plt.plot(alpha_list)
+plt.plot(theta_d)
+plt.plot(theta_list)
+# print(len(kr_list))
+# plt.plot(alpha_list)
 # plt.plot(Ar)
 plt.show()
 print(len(list(sol[:,0])))
