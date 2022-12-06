@@ -43,7 +43,7 @@ def adaptive_AIC(y, t, kr_bar, tau_e, M, C, H, m_foot, l_foot_com, mov, alpha, t
         theta_adm = -theta_adm
     G = -m_foot * 9.81 *l_foot_com * np.cos(y[0])
     noise = np.random.randint(0, 1)
-    kh = noise + np.exp(np.log(101)/3*t) - 1
+    kh = noise + np.exp(np.log(101)/3*t) - 0.5
     k_rstar = 1/(2*abs(theta_e)*beta*kh)
     k_rc = (G-tau_e)/theta_adm
     k_ra = min(k_rc, k_rstar)

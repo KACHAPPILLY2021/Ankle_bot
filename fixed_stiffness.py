@@ -36,7 +36,7 @@ def fixed_AIC(y, t, kr_bar, tau_e, M, C, m_foot, l_foot_com, mov ):
         tau_e = -1*tau_e
     G = -m_foot * 9.81 *l_foot_com * np.cos(y[0])
     noise = np.random.randint(0, 1)
-    kh = noise + np.exp(np.log(101)/3*t) - 1
+    kh = noise + np.exp(np.log(101)/3*t) - 0.5
     tau_r = (kr_bar*(theta_e) - Br* y[1] + tau_e)
     tau_h = kh*theta_e - Bh * y[1]
     theta_ddot = (1/M)*(tau_r + tau_h - C*y[1] - G)

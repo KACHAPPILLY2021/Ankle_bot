@@ -19,6 +19,7 @@ theta_ddot_list = [0]
 theta_e_list = []
 Emax = -np.inf
 
+
 # function to calculate theta desired
 def calc_theta_d(t,mov):
     if t<=2:
@@ -37,13 +38,9 @@ def adaptive_AIC(y, t, kr_bar, tau_e, M, C, H, m_foot, l_foot_com, mov, alpha, t
     theta_e = theta_d - y[0]
     theta_e_list.append(theta_e)
     # change the sign of tau_e and admissible theta based on the movement
-    if mov == 1:
-        tau_e = -1*tau_e
-    else:
-        theta_adm = -theta_adm
     G = -m_foot * 9.81 *l_foot_com * np.cos(y[0])
     noise = np.random.randint(0, 1)
-    kh = noise + np.exp(np.log(101)/3*t) - 1
+    kh = noise + np.exp(np.log(101)/3*t) - 0.5
     k_rstar = 1/(beta*kh)
     k_rc = (G-tau_e)/theta_adm
     k_ra = min(k_rc, k_rstar)
@@ -57,7 +54,7 @@ def adaptive_AIC(y, t, kr_bar, tau_e, M, C, H, m_foot, l_foot_com, mov, alpha, t
 
 
 # specify the number of movements
-n_movements = 2
+n_movements = 80
 
 for movement in range(n_movements):
     E = 0
@@ -65,9 +62,11 @@ for movement in range(n_movements):
     if movement % 2 == 0:
         # going up
         mov = 1
+        tau_e = -1*tau_e
     else:
         # going down
         mov =2
+        theta_adm = -theta_adm
     sol = odeint(adaptive_AIC, [theta_list[-1], theta_dot_list[-1]], t, args=(kr_bar, tau_e, M, C, H, m_foot, l_foot_com, mov, alpha_list[-1], theta_adm))
     # print(sol)
     theta_list += list(sol[:,0])
@@ -81,6 +80,24 @@ for movement in range(n_movements):
     alpha = f*alpha_list[-1] + g*P
     alpha_list.append(alpha)
 
+
+    for i in range(len(list(sol[:,0]))):
+       
+        theta_desired = calc_theta_d(i/100,mov)
+        theta_e = theta_desired - sol[i,0]
+        G = -m_foot * 9.81 *l_foot_com * np.cos(sol[i,0])
+        noise = np.random.randint(0, 1)
+        kh = noise + np.exp(np.log(101)/3*i/100) - 0.5
+        k_rstar = 1/(beta*kh)
+        k_rc = (G-tau_e)/theta_adm
+        k_ra = min(k_rc, k_rstar)
+        kr_bar = alpha*k_ra
+        kr_list.append(kr_bar)
+        tau_r = (kr_bar*(theta_e) - Br* sol[i,1]+ tau_e)
+        tau_r_list.append(tau_r)
+
+
+
 theta_d = []
 for movement in range(n_movements):
     if movement % 2 == 0:
@@ -91,10 +108,18 @@ for movement in range(n_movements):
         mov =2
     theta_d += [calc_theta_d(q,mov) for q in t]
 
-plt.plot(theta_d)
-plt.plot(theta_list)
-# plt.plot(alpha_list)
+
+
+# plt.plot(theta_d)
+# plt.plot(theta_list)
+print(len(kr_list))
+plt.plot(alpha_list)
+# plt.plot(Ar)
 plt.show()
+print(len(list(sol[:,0])))
+
+
+
 
             
 
