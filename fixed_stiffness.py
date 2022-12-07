@@ -32,8 +32,6 @@ def fixed_AIC(y, t, kr_bar, tau_e, M, C, m_foot, l_foot_com, mov ):
 
     theta_d = calc_theta_d(t, mov)
     theta_e = theta_d - y[0]
-    if mov == 1:
-        tau_e = -1*tau_e
     G = -m_foot * 9.81 *l_foot_com * np.cos(y[0])
     noise = np.random.randint(0, 1)
     kh = noise + np.exp(np.log(101)/3*t) - 0.5
@@ -54,9 +52,11 @@ for movement in range(n_movements):
     if movement % 2 == 0:
         # going up
         mov = 1
+        tau_e1 = -1*tau_e
     else:
         # going down
         mov =2
+        tau_e1 = tau_e
     sol = odeint(fixed_AIC, [theta_list[-1], theta_dot_list[-1]], t, args=(kr_bar, tau_e, M, C, m_foot, l_foot_com, mov))
     theta_list += list(sol[:,0])
     theta_dot_list += list(sol[:,1])
