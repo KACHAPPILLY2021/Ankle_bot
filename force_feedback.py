@@ -109,10 +109,11 @@ for movement in range(n_movements):
     theta_d += [calc_theta_d(q,mov) for q in t]
 
 fig, ax = plt.subplots(2, 2)
-ax[0][0].plot(theta_d)
-ax[0][0].plot(theta_list)
+ax[0][0].plot(theta_d, label = 'desired theta')
+ax[0][0].plot(theta_list, label = 'theta')
 ax[0][0].set_xlabel('Time')
 ax[0][0].set_ylabel('Theta')
+ax[0][0].legend(loc = 'upper right')
 
 ax[0][1].plot(kr_list)
 ax[0][1].set_xlabel('Time')

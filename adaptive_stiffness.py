@@ -55,9 +55,9 @@ def adaptive_AIC(y, t, kr_bar, tau_e, M, C, H, m_foot, l_foot_com, mov, alpha, t
 
 
 # specify the number of movements
-n_movements = 2
+n_movements = 1
 
-for movement in range(1, n_movements):
+for movement in range(n_movements):
     E = 0
     t = np.linspace(0, 3, 300) 
     if movement % 2 == 0:
@@ -103,7 +103,7 @@ for movement in range(1, n_movements):
 
 
 theta_d = []
-for movement in range(1, n_movements):
+for movement in range(n_movements):
     if movement % 2 == 0:
         # going up
         mov = 1
@@ -114,10 +114,11 @@ for movement in range(1, n_movements):
 
 
 fig, ax = plt.subplots(2, 2)
-ax[0][0].plot(theta_d)
-ax[0][0].plot(theta_list)
+ax[0][0].plot(theta_d, label = 'desired theta')
+ax[0][0].plot(theta_list, label = 'theta')
 ax[0][0].set_xlabel('Time')
 ax[0][0].set_ylabel('Theta')
+ax[0][0].legend(loc = 'upper left')
 
 ax[0][1].plot(kr_list)
 ax[0][1].set_xlabel('Time')
@@ -128,7 +129,7 @@ ax[1][0].set_ylabel('Tau_r')
 ax[1][1].plot(kh_list)
 ax[1][1].set_xlabel('Time')
 ax[1][1].set_ylabel('Kh')
-fig.suptitle('Adaptive stiffness - Movement 2')
+fig.suptitle('Adaptive stiffness - Movement 1')
  
 plt.show()
 
