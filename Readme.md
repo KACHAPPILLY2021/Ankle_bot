@@ -11,13 +11,17 @@ Libraries required:
 Instructions:
 1. Unzip the code.zip file containing the code files.
 2. To run the code for fixed stiffness:
-$ python3 fixed_stiffness.py
+
+    $ python3 fixed_stiffness.py
 3. To run the code for adaptive stiffness:
-$ python3 adaptive_stiffness.py
+
+    $ python3 adaptive_stiffness.py
 4. To run the code for force feedback:
-$ python3 force_feedback.py
+
+    $ python3 force_feedback.py
 5. To run the code for enhancement 1:
-$ python3 enhancement_1.py
+
+    $ python3 enhancement_1.py
 
 
 Additional information:
