@@ -1,5 +1,5 @@
 ﻿# ENPM640 Final Project
-# Team members: Aditya Varadaraj, Saurabh Palande, Jeffin Johny, Prateek Verma
+Team members: Aditya Varadaraj, Saurabh Palande, Jeffin Johny, Prateek Verma
 
 
 Libraries required:
