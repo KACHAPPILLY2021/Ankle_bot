@@ -5,7 +5,7 @@
 <div align="center">
 
 
-  <h1 align="center">Adaptive Impedence Control in Anklebot</h1>
+  <h1 align="center">Enhancements to Adaptive Impedence Control in Anklebot</h1>
 
 
 </div>
@@ -45,20 +45,25 @@
 ## About The Project
 
 
-
-Implemented Depth First Search algorithm using Object Oriented Programming in C++ and visualized its output using Micromouse simulator.
+The use of rehabilitation robots, particularly Anklebots, is growing in post-stroke therapy as a response to the aging population and shortage of physiotherapists, with the aim of promoting patient participation.
+This project deals with the validation of existing work on Anklebot [Main Paper](https://ieeexplore.ieee.org/document/8561224) and the efficacy of the enhancements we suggested.  
 
 Summary of tasks achieved:
-* Implemented DFS using a representation of the maze(mouse has no prior knowledge of walls except the boundaries.)
-* Generated path from current position to goal using the representation of the maze.
-* Moved the mouse using API interface commands and updated the walls as detected.
-* The robot halted when the mouse hit a wall, and DFS was employed to recalculate the path using prior wall data.
-* The described steps were repeated until the goal position was achieved.
+* An adaptive approach was compared with a fixed-stiffness approach using the Anklebot during patient-led movements, by synthetically generating virtual
+ankle stiffness values of the human from main paper. 
+* A **cost function** was modified to improve system performance by replacing L2 error with **L1 error** for adaptive stiffness calculation.
+* **Force feedback control** was added to **reduce the apparent mass and friction** felt by the patient due to the robot.
+* ```Proposed enhancement 1``` improved smoothness in motion by reducing sudden jerks in the dorsi-plantar flexion angle (θ).
+* ```Proposed enhancement 2``` improved backdrivability by reducing the overall apparent mass and damping.
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Demo
+
+Anklebot setup | Control Diagram with Force Feedback
+:-------------------------:|:-------------------------:
+<img src="https://github.com/KACHAPPILLY2021/Computer_Vision_projects/blob/main/proj_1/texture.jpg?raw=true" width=40% alt="original"> | <img src="https://github.com/KACHAPPILLY2021/Computer_Vision_projects/blob/main/proj_1/output_1/2_main.PNG?raw=true" width=30% alt="reconstructed">
 
 <div align="center">
 
