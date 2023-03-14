@@ -23,19 +23,16 @@
       </ul>
     </li>
     <li>
-      <a href="#documentation">Documentation</a>
-      <ul>
-        <li><a href="#report">Report</a></li>
-      </ul>
+      <a href="#report">Report</a>
     </li>
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
+        <li><a href="#usage">Usage</a></li>
+	<li><a href="#additional-information">Additional Information</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
     <li><a href="#contributors">Contributors</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#license">License</a></li>
@@ -76,18 +73,10 @@ https://user-images.githubusercontent.com/90359587/224387441-d45e0f85-1992-43dc-
 
 
 
-<!-- Document and Reports -->
-## Documentation
+<!--  Reports -->
+## Report
 
-The documentation for this project can be found here.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-### Report
-
-Detailed decription for this project can be found in this [![Youtube](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://youtu.be/9MUCtm4vwkQ)
+Detailed report in IEEE format can be found [here](https://github.com/KACHAPPILLY2021/Ankle_bot/blob/main/ENPM640_Project_Report.pdf).
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
@@ -99,70 +88,38 @@ To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
 * atleast Python 3.6
-* Libraries:
-- Scipy(odeint)
+* Libraries required : Scipy(odeint), Numpy, Matplolib 
 
 
-### Installation
+### Usage
 
-Installing the micromouse simulator and running the code.
+1. Clone repo and navigate to ```Ankle_bot``` directory.
+   ```sh
+   git clone https://github.com/KACHAPPILLY2021/Ankle_bot.git
+   ```
+2. To run the code for fixed stiffness:
+   ```sh
+   python3 fixed_stiffness.py
+   ```
+3. To run the code for adaptive stiffness:
+   ```sh
+   python3 adaptive_stiffness.py
+   ```
+4. To run the code for force feedback:
+   ```sh
+   python3 force_feedback.py
+   ```
+5. To run the code for enhancement 1 (New Cost function):
+   ```sh
+   python3 enhancement_1.py
+   ```
+### Additional Information
 
-1. Make directory
-   ```sh
-   mkdir ~/RWA2_simulator
-   ```
-2. Clone the repos
-   ```sh
-   cd ∼ /RWA2_simulator
-   ```
-   ```sh
-   git clone https://github.com/mackorone/mms.git
-   ```
-   ```sh
-   git clone https://github.com/micromouseonline/mazefiles.git
-   ```
-   ```sh
-   git clone https://github.com/KACHAPPILLY2021/maze_solving_algorithm.git
-   ```
-3. Compile Simulator
-   ```sh
-   sudo apt-get install qt5-default
-   ```
-   ```sh
-   cd mms/src
-   ```
-   ```sh
-   qmake && make
-   ```
+* All the parameters used in the code are in the file ```params.py``` in the [utils](https://github.com/KACHAPPILLY2021/Ankle_bot/tree/main/utils) folder.
+* The results/plots are stored in the [Results](https://github.com/KACHAPPILLY2021/Ankle_bot/tree/main/Results) folder.
+* This program is designed for any number of movements(going up and going down) i.e., dorsiflexions and plantarflexions
+* To change the number of movements modify the ```n_movements``` parameter in the respective files as needed.
 
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- USAGE EXAMPLES -->
-## Usage
-
-How to start simulator and use this DFS code in it.
-1. Start simulator
-   ```sh
-   cd ∼ /RWA2_simulator/mms/bin
-   ```
-   ```sh
-   ./mms
-   ```
-2. Choose any maze type and Click on the + button as shown in figure.
-
-3. **Directory**: Click Browse and navigate to 'maze_solving_algorithm'
-4. Enter **Build command** as:
-   ```sh
-   g++ src/main.cpp src/mouse.cpp src/node.cpp src/api.cpp
-   ```
-5. Enter **Run Command** as :
-  ```sh
-  ./a.out
-  ```
-6. Then Press **Build**, followed by **RUN** under the **Controls** Section
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
