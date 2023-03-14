@@ -63,17 +63,9 @@ ankle stiffness values of the human from main paper.
 
 Anklebot setup | Control Diagram with Force Feedback
 :-------------------------:|:-------------------------:
-<img src="https://github.com/KACHAPPILLY2021/Computer_Vision_projects/blob/main/proj_1/texture.jpg?raw=true" width=40% alt="original"> | <img src="https://github.com/KACHAPPILLY2021/Computer_Vision_projects/blob/main/proj_1/output_1/2_main.PNG?raw=true" width=30% alt="reconstructed">
-
-<div align="center">
+<img src="https://github.com/KACHAPPILLY2021/Ankle_bot/blob/main/sample_img/bot.PNG?raw=true" width=70% alt="bot"> | <img src="https://github.com/KACHAPPILLY2021/Ankle_bot/blob/main/sample_img/force_feedback.PNG?raw=true" width=80% alt="force">
 
 
-  <h4 align="center"> Explorer and Follower working (X16 Speed)</h4>
-
-
-</div>
-
-https://user-images.githubusercontent.com/90359587/224387441-d45e0f85-1992-43dc-be13-360b4ef2d11c.mp4
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
