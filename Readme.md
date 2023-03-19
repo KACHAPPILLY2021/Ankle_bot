@@ -23,7 +23,10 @@
       </ul>
     </li>
     <li>
-      <a href="#report">Report</a>
+      <a href="#results">Results</a>
+      <ul>
+        <li><a href="#report">Report</a></li>
+      </ul>
     </li>
     <li>
       <a href="#getting-started">Getting Started</a>
@@ -49,8 +52,8 @@ The use of rehabilitation robots, particularly Anklebots, is growing in post-str
 This project deals with the validation of existing work on Anklebot [Main Paper](https://ieeexplore.ieee.org/document/8561224) and the efficacy of the enhancements we suggested.  
 
 Summary of tasks achieved:
-* An adaptive approach was compared with a fixed-stiffness approach using the Anklebot during patient-led movements, by synthetically generating virtual
-ankle stiffness values of the human from main paper. 
+* An adaptive approach was compared with a fixed-stiffness approach using the Anklebot during patient-led movements, by synthetically generating **virtual
+ankle stiffness values** of the human from main paper. 
 * A **cost function** was modified to improve system performance by replacing L2 error with **L1 error** for adaptive stiffness calculation.
 * **Force feedback control** was added to **reduce the apparent mass and friction** felt by the patient due to the robot.
 * ```Proposed enhancement 1``` improved smoothness in motion by reducing sudden jerks in the dorsi-plantar flexion angle (θ).
@@ -71,7 +74,35 @@ Anklebot setup | Control Diagram with Force Feedback
 
 
 <!--  Reports -->
-## Report
+## Results
+
+These plots reveal the effectiveness of the enhancements implemented for plantar flexion:
+
+* ```Enchancement 1``` : 
+    - L1 error for Adaptive Stiffness calculation. 
+    - Notice how the sudden jerks are gone for torque applied by robot. (Tau_r)
+
+<div align="center">
+
+L2 Error | L1 Error 
+--- | :---: 
+<img src="https://github.com/KACHAPPILLY2021/Ankle_bot/blob/main/sample_img/b4_ench1.PNG?raw=true" width=80% alt="frames"> | <img src="https://github.com/KACHAPPILLY2021/Ankle_bot/blob/main/sample_img/after_ench1.PNG?raw=true" width=80% alt="frames">
+
+</div>
+
+* ```Enchancement 2``` : 
+    - Introducing Force Feedback. 
+    - Notice the high stiffness values of the robot only lasts for shorter duration. (Kr)
+
+<div align="center">
+
+Without Force Feedback | After Force Feedback 
+--- | :---: 
+<img src="https://github.com/KACHAPPILLY2021/Ankle_bot/blob/main/sample_img/b4_ench2.PNG?raw=true" width=80% alt="frames"> | <img src="https://github.com/KACHAPPILLY2021/Ankle_bot/blob/main/sample_img/after_ench2.PNG?raw=true" width=80% alt="frames">
+
+</div>
+
+### Report
 
 Detailed report in IEEE format can be found [here](https://github.com/KACHAPPILLY2021/Ankle_bot/blob/main/ENPM640_Project_Report.pdf).
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
