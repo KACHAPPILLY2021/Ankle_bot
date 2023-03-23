@@ -52,7 +52,7 @@ The use of rehabilitation robots, particularly Anklebots, is growing in post-str
 This project deals with the validation of existing work on Anklebot [Main Paper](https://ieeexplore.ieee.org/document/8561224) and the efficacy of the enhancements we suggested.  
 
 Summary of tasks achieved:
-* An adaptive approach was compared with a fixed-stiffness approach using the Anklebot during patient-led movements, by synthetically generating **virtual
+* An adaptive impedence control strategy was compared with a fixed-stiffness approach using the Anklebot during patient-led movements, by synthetically generating **virtual
 ankle stiffness values** of the human from main paper. 
 * A **cost function** was modified to improve system performance by replacing L2 error with **L1 error** for adaptive stiffness calculation.
 * **Force feedback control** was added to **reduce the apparent mass and friction** felt by the patient due to the robot.
