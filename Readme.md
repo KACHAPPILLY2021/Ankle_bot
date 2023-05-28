@@ -157,7 +157,7 @@ To get a local copy up and running follow these simple steps.
 
 - [Aditya Varadaraj](https://github.com/AdityaVaradaraj)
 - [Jeffin Johny](https://github.com/KACHAPPILLY2021)
-- Prateek Verma
+- [Prateek Verma](https://github.com/prateekvrma)
 - [Saurabh Palande](https://github.com/saurabhp369)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
