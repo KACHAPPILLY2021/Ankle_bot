@@ -92,7 +92,7 @@ L2 Error | L1 Error
 
 * ```Enchancement 2``` : 
     - Introducing Force Feedback. 
-    - Notice the high stiffness values of the robot only lasts for shorter duration. (Kr)
+    - Go through the report for detailed explanation.
 
 <div align="center">
 
